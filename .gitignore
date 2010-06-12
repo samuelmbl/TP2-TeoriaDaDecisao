@@ -1,1 +1,4 @@
 *.asv
+rawData.mat
+dados
+getFronteiraPareto.m
