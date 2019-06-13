@@ -9,6 +9,7 @@ for i = 1 : n;
  end;
 Priority = mean(N, 2);
 lambda_max = s*Priority;
+
 IC = (lambda_max - n)/(n -1);
 QC = IC/ICA(n);
 
