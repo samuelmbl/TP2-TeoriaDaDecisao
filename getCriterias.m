@@ -14,13 +14,13 @@ function [totalPA, meanDist, unusedBand, connectedClients] = getCriterias(PA, fo
         for j = 1:length(acessPoints),
             clientsInAcessPoits = PAC(:,i) == acessPoints(j);
             numClients = length(PAC(clientsInAcessPoits,i));
-            meanDist(i) = meanDist(i) + sum(dist(clientsInAcessPoits,i))*numClients;
             
             unusedBand(i) = unusedBand(i) - sum(clients(clientsInAcessPoits,3));
         end;
-        meanDist(i) = meanDist(i)/sum(dist(:,i));
+%         meanDist(i) = harmmean(dist(dist(:,i)~=0,i));
+        meanDist(i) = mean(dist(dist(:,i)~=0,i));
     end;
-    
+    unusedBand = unusedBand./totalPA;
 
 
 end
