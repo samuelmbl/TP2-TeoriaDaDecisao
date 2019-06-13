@@ -1,0 +1,53 @@
+=>Tópicos:
+-> Intro do problema
+-> Modelagem do problema
+-> Funções objetivo
+-> Estruturas de vizinhança
+-> SA (Detalhes de implementação)
+ - Inicializa 100 PAs
+ - Calcula t0
+ - Otimização (itera até achar uma solução ótima)
+ - Como foi definido qual PA atende cada cliente (selectPACalcDist)
+-> Problemas mono-objetivo
+ - min(Distancia)
+	-Graficos:
+		Fobj x iterações
+		Fobjbest x iterações
+		PA0 e PAfinal
+ - min(Pontos de acesso)
+	-Graficos:
+		Fobj x iterações
+		Fobjbest x iterações
+		PA0 e PAfinal
+-> Problema multi-objetivo
+ - PW
+	- Foi usado o SA
+	- Fobj = alfa*Fobj1 + (1-alfa)Fobj2
+	-Graficos:
+		Fobj x iterações
+		Fobjbest x iterações
+		Fronteira pareto otima
+		Pontos coletados + fronteira pareto
+-> Discussão
+- Os métodos conseguiram otimizar.
+
+=> Tomada de decisão
+-> Fronteira pareto pega no PW
+-> Critérios usados
+-> Métodos usados: AHP e PROMETHEE II
+-> AHP
+ - Implementação baseada no modelo de escala
+	- 4 escalas para cada critério
+ - Matriz de critérios
+	- Ordem de priorização de critérios: c2 > c3 > c1> c4 (exemplo)
+ - Resultado (tabela com dois resultados pegos com peso de critérios diferentes)
+
+-> PROMETHEE II
+ - Definição de prioridade definida por curva linear
+	- q = 0, p = max(ci) - min(ci);
+ - Peso dos criterios
+ - Resultdo (tabela com dois resultados pegos com peso de critérios diferentes)
+
+-> Discussao AHP vs PROMETHEE II
+
+-> Conclusão
