@@ -18,3 +18,20 @@ weightCriterias = [0.2 0.6 0.2 0];
 
 [globalPriotities, indexBest] = PrometheeII(criterias, weightCriterias)
 globalPriotitiesIdealized = globalPriotities/max(globalPriotities)
+
+CriteriaJudge = load('Criteria 1.csv');
+[Priority, IC, QC] = AHPPriorityAndInconsistency(CriteriaJudge);
+SolutionsAndCriteriaPriority = load('SolutionAndCriteriaPriority.csv');
+[SolutionPriority, IndexBestSolution]  = AHPRatingModelPriority(SolutionsAndCriteriaPriority,Priority);
+
+fprintf('A melhor solução para o Critério 1 é a %iª\n', IndexBestSolution); 
+fprintf('Prioridade');
+SolutionPriority
+
+CriteriaJudge = load('Criteria 2.csv');
+[Priority, IC, QC] = AHPPriorityAndInconsistency(CriteriaJudge);
+[SolutionPriority, IndexBestSolution]  = AHPRatingModelPriority(SolutionsAndCriteriaPriority,Priority);
+
+fprintf('A melhor solução para o Critério 1 é a %iª\n', IndexBestSolution); 
+fprintf('Prioridade');
+SolutionPriority
