@@ -4,7 +4,7 @@ function [totalPA, meanDist, unusedBand, connectedClients] = getCriterias(PA, fo
     
     for i=1:length(fobj(:,1)),
         [PAC(:,i), dist(:,i)] = selectPACcalcDist(PA(:,:,i), clients);
-        connectedClients(i) = length(PAC(PAC(:,i) ~= 0,i));
+        connectedClients(i) = length(PAC) - length(PAC(PAC(:,i) ~= 0,i));
         
         acessPoints = unique(PAC(:,i));
         acessPoints = acessPoints(2:end);
